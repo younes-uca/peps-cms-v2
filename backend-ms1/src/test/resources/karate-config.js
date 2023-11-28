@@ -6,7 +6,7 @@ function fn() {
    
     const rootUrlDev = 'http://localhost:8036/';
     const adminCredentialsDev = {"username": "admin","password": "123"};
-    const urlDev = 'jdbc:mysql://localhost:3306/peps-order';
+    const urlDev = 'jdbc:mysql://localhost:3306/sqli-cms';
     const usernameDev = 'root';
     const passwordDev = '';
     const driverDev = 'com.mysql.cj.jdbc.Driver';
@@ -14,7 +14,7 @@ function fn() {
 
     const rootUrlInit = 'https://stage-host/';
     const adminCredentialsInit = {"username": "admin","password": "123"};
-    const urlInit = 'jdbc:mysql://localhost:3306/peps-order';
+    const urlInit = 'jdbc:mysql://localhost:3306/sqli-cms';
     const usernameInit = 'root';
     const passwordInit = '';
     const driverInit = 'com.mysql.cj.jdbc.Driver';
@@ -22,7 +22,7 @@ function fn() {
     
     const rootUrlE2e = 'https://e2e-host/';
     const adminCredentialsE2e = {"username": "admin","password": "123"};
-    const urlE2e = 'jdbc:mysql://localhost:3306/peps-order';
+    const urlE2e = 'jdbc:mysql://localhost:3306/sqli-cms';
     const usernameE2e = 'root';
     const passwordE2e = '';
     const driverE2e = 'com.mysql.cj.jdbc.Driver';
