@@ -1,6 +1,5 @@
 package ma.peps.sqli.util.security.config;
 
-import ma.peps.sqli.util.security.common.AuthoritiesConstants;
 import ma.peps.sqli.util.security.jwt.AuthEntryPointJwt;
 import ma.peps.sqli.util.security.jwt.AuthTokenFilter;
 import ma.peps.sqli.util.security.service.facade.UserService;
@@ -61,14 +60,14 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/login").permitAll()
-                                .requestMatchers("/actuator/health").permitAll()
-                                .requestMatchers("/actuator/info").permitAll()
-                                .requestMatchers("/api/open/**").permitAll()
-                                .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll() // Permit access to Swagger UI and API docs
-                                .requestMatchers("/api/admin/login").permitAll()
-                                //.requestMatchers("/api/admin/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
-                               .anyRequest().permitAll()//.authenticated()
+                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/actuator/info").permitAll()
+                        .requestMatchers("/api/open/**").permitAll()
+                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll() // Permit access to Swagger UI and API docs
+                        .requestMatchers("/api/admin/login").permitAll()
+                        //.requestMatchers("/api/admin/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
+                        .anyRequest().permitAll()//.authenticated()
 
                 );
 

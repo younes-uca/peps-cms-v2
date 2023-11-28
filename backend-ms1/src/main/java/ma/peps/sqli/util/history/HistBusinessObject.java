@@ -1,12 +1,11 @@
 package ma.peps.sqli.util.history;
 
+import jakarta.persistence.MappedSuperclass;
 import ma.peps.sqli.util.bean.BusinessObject;
 
-import jakarta.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 /**
- *
  * @author Zouani
  * @version 1.2
  */

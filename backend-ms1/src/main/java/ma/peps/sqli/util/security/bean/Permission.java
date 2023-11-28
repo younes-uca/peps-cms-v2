@@ -1,10 +1,10 @@
 package ma.peps.sqli.util.security.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Permission {
@@ -17,9 +17,11 @@ public class Permission {
     @JsonIgnore
     List<Role> roles = new ArrayList<>();
 
-    public Permission(){ super(); }
+    public Permission() {
+        super();
+    }
 
-    public Permission(String name){
+    public Permission(String name) {
         super();
         this.name = name;
     }

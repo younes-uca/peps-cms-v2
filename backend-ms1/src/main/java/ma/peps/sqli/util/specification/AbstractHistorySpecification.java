@@ -1,13 +1,13 @@
 package ma.peps.sqli.util.specification;
 
-import ma.peps.sqli.util.history.HistBusinessObject;
-import ma.peps.sqli.util.history.HistCriteria;
-import org.springframework.data.jpa.domain.Specification;
-
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import ma.peps.sqli.util.history.HistBusinessObject;
+import ma.peps.sqli.util.history.HistCriteria;
+import org.springframework.data.jpa.domain.Specification;
+
 import java.util.ArrayList;
 import java.util.List;
 

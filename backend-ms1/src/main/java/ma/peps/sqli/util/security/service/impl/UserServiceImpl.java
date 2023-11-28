@@ -1,26 +1,22 @@
 package ma.peps.sqli.util.security.service.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.time.LocalDateTime;
-
-import org.springframework.context.annotation.Lazy;
-
+import ma.peps.sqli.util.security.bean.Role;
+import ma.peps.sqli.util.security.bean.User;
+import ma.peps.sqli.util.security.dao.UserDao;
+import ma.peps.sqli.util.security.service.facade.RoleService;
+import ma.peps.sqli.util.security.service.facade.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import  ma.peps.sqli.util.security.bean.Role;
-import ma.peps.sqli.util.security.bean.User;
-import ma.peps.sqli.util.security.dao.UserDao;
-
-import ma.peps.sqli.util.security.service.facade.RoleService;
-import ma.peps.sqli.util.security.service.facade.UserService;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -63,14 +59,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         if (username == null)
-        return null;
+            return null;
         return userDao.findByUsername(username);
     }
 
     @Override
     public User findByUsernameWithRoles(String username) {
         if (username == null)
-        return null;
+            return null;
         return userDao.findByUsername(username);
     }
 
@@ -83,7 +79,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         if (id == null)
-        return null;
+            return null;
         return userDao.getOne(id);
     }
 
@@ -104,26 +100,25 @@ public class UserServiceImpl implements UserService {
         else {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         }*/
-        user.setPassword(bCryptPasswordEncoder.encode("123"));
-        user.setAccountNonExpired(true);
-        user.setAccountNonLocked(true);
-        user.setCredentialsNonExpired(true);
-        user.setEnabled(true);
-        user.setPasswordChanged(false);
-        user.setCreatedAt(LocalDateTime.now());
+            user.setPassword(bCryptPasswordEncoder.encode("123"));
+            user.setAccountNonExpired(true);
+            user.setAccountNonLocked(true);
+            user.setCredentialsNonExpired(true);
+            user.setEnabled(true);
+            user.setPasswordChanged(false);
+            user.setCreatedAt(LocalDateTime.now());
 
-        if (user.getRoles() != null) {
-            Collection<Role> roles = new ArrayList<Role>();
-            for (Role role : user.getRoles()) {
-                roles.add(roleService.save(role));
+            if (user.getRoles() != null) {
+                Collection<Role> roles = new ArrayList<Role>();
+                for (Role role : user.getRoles()) {
+                    roles.add(roleService.save(role));
+                }
+                user.setRoles(roles);
             }
-            user.setRoles(roles);
-        }
             User mySaved = userDao.save(user);
             return mySaved;
         }
     }
-
 
 
     @Override
@@ -140,7 +135,7 @@ public class UserServiceImpl implements UserService {
             foundedUser.setAuthorities(new ArrayList<>());
             Collection<Role> roles = new ArrayList<Role>();
             for (Role role : user.getRoles()) {
-            	roles.add(roleService.save(role));
+                roles.add(roleService.save(role));
             }
             foundedUser.setRoles(roles);
             return userDao.save(foundedUser);

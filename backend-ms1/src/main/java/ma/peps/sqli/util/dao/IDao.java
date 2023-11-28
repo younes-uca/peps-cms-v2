@@ -14,7 +14,7 @@ public interface IDao<D extends AuditDomainObject> {
 
     int deleteById(Long id);
 
-    List<D> findAlloptimized();
+    List<D> findAllOptimized();
 
     D update(D model);
 }

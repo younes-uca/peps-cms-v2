@@ -1,23 +1,17 @@
 package ma.peps.sqli.infra.bean.core.common;
 
-import java.util.Objects;
-
-
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
-import ma.peps.sqli.util.audit.AuditBusinessObject;
 import jakarta.persistence.*;
+import ma.peps.sqli.util.audit.AuditBusinessObject;
+
+import java.util.Objects;
 
 
 @Entity
 @Table(name = "container_type")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@SequenceGenerator(name="container_type_seq",sequenceName="container_type_seq",allocationSize=1, initialValue = 1)
-public class ContainerTypeEntity   extends AuditBusinessObject     {
+@SequenceGenerator(name = "container_type_seq", sequenceName = "container_type_seq", allocationSize = 1, initialValue = 1)
+public class ContainerTypeEntity extends AuditBusinessObject {
 
     private Long id;
 
@@ -27,41 +21,47 @@ public class ContainerTypeEntity   extends AuditBusinessObject     {
     private String code;
 
 
-
-    public ContainerTypeEntity(){
+    public ContainerTypeEntity() {
         super();
     }
 
-    public ContainerTypeEntity(Long id,String libelle){
+    public ContainerTypeEntity(Long id, String libelle) {
         this.id = id;
-        this.libelle = libelle ;
-    }
-    public ContainerTypeEntity(String libelle){
-        this.libelle = libelle ;
+        this.libelle = libelle;
     }
 
-
+    public ContainerTypeEntity(String libelle) {
+        this.libelle = libelle;
+    }
 
 
     @Id
     @Column(name = "id")
-        @GeneratedValue(strategy =  GenerationType.SEQUENCE,generator="container_type_seq")
-    public Long getId(){
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "container_type_seq")
+    public Long getId() {
         return this.id;
     }
-    public void setId(Long id){
+
+    public void setId(Long id) {
         this.id = id;
-    }    public String getLibelle(){
+    }
+
+    public String getLibelle() {
         return this.libelle;
     }
-    public void setLibelle(String libelle){
+
+    public void setLibelle(String libelle) {
         this.libelle = libelle;
-    }    public String getCode(){
+    }
+
+    public String getCode() {
         return this.code;
     }
-    public void setCode(String code){
+
+    public void setCode(String code) {
         this.code = code;
     }
+
     @Transient
     public String getLabel() {
         label = libelle;

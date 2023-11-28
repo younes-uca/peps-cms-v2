@@ -1,9 +1,8 @@
-
 package ma.peps.sqli.util.security.service.facade;
 
-import java.util.List;
-
 import ma.peps.sqli.util.security.bean.Role;
+
+import java.util.List;
 
 
 public interface RoleService {

@@ -1,7 +1,7 @@
 package ma.peps.sqli.infra.dao.facade.core.common;
 
-import ma.peps.sqli.domain.dao.common.ContainerTypeDao;
-import ma.peps.sqli.domain.model.common.ContainerType;
+import ma.peps.sqli.app.backoffice.domain.dao.common.ContainerTypeDao;
+import ma.peps.sqli.app.backoffice.domain.model.common.ContainerType;
 import ma.peps.sqli.infra.bean.core.common.ContainerTypeEntity;
 import ma.peps.sqli.infra.converter.common.ContainerTypeInfraConverter;
 import ma.peps.sqli.infra.dao.repository.core.common.ContainerTypeRepository;

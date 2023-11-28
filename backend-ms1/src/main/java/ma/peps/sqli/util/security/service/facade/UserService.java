@@ -1,16 +1,16 @@
 package ma.peps.sqli.util.security.service.facade;
 
-import java.util.List;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import ma.peps.sqli.util.security.bean.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import java.util.List;
 
 public interface UserService extends UserDetailsService {
 
-   String cryptPassword(String value);
+    String cryptPassword(String value);
 
-   boolean changePassword(String username, String newPassword);
+    boolean changePassword(String username, String newPassword);
 
     List<User> findAll();
 
@@ -28,8 +28,8 @@ public interface UserService extends UserDetailsService {
 
     User findByUsernameWithRoles(String username);
 
-    int  deleteByUsername(String username);
+    int deleteByUsername(String username);
 
-    public UserDetails loadUserByUsername(String username)  ;
+    public UserDetails loadUserByUsername(String username);
 
 }

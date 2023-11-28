@@ -1,10 +1,9 @@
-package  ma.peps.sqli.infra.dao.criteria.core.common;
-
+package ma.peps.sqli.infra.dao.criteria.core.common;
 
 
 import ma.peps.sqli.util.criteria.BaseCriteria;
 
-public class ContainerTypeCriteria extends  BaseCriteria  {
+public class ContainerTypeCriteria extends BaseCriteria {
 
     private String libelle;
     private String libelleLike;
@@ -12,32 +11,38 @@ public class ContainerTypeCriteria extends  BaseCriteria  {
     private String codeLike;
 
 
+    public ContainerTypeCriteria() {
+    }
 
-    public ContainerTypeCriteria(){}
-
-    public String getLibelle(){
+    public String getLibelle() {
         return this.libelle;
     }
-    public void setLibelle(String libelle){
+
+    public void setLibelle(String libelle) {
         this.libelle = libelle;
     }
-    public String getLibelleLike(){
+
+    public String getLibelleLike() {
         return this.libelleLike;
     }
-    public void setLibelleLike(String libelleLike){
+
+    public void setLibelleLike(String libelleLike) {
         this.libelleLike = libelleLike;
     }
 
-    public String getCode(){
+    public String getCode() {
         return this.code;
     }
-    public void setCode(String code){
+
+    public void setCode(String code) {
         this.code = code;
     }
-    public String getCodeLike(){
+
+    public String getCodeLike() {
         return this.codeLike;
     }
-    public void setCodeLike(String codeLike){
+
+    public void setCodeLike(String codeLike) {
         this.codeLike = codeLike;
     }
 

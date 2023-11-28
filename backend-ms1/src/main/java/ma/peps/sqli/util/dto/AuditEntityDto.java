@@ -2,7 +2,6 @@ package ma.peps.sqli.util.dto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Lob;
-
 import ma.peps.sqli.util.history.HistBusinessObject;
 
 public class AuditEntityDto extends BaseDto {
@@ -16,7 +15,7 @@ public class AuditEntityDto extends BaseDto {
      * OldValue
      */
     @Lob
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition = "TEXT")
     protected String data;
 
     /**

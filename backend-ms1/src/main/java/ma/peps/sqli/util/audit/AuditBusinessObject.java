@@ -17,6 +17,7 @@ public class AuditBusinessObject extends BusinessObject {
     private LocalDateTime updatedOn;
     private String createdBy;
     private String updatedBy;
+
     public AuditBusinessObject() {
         super();
     }

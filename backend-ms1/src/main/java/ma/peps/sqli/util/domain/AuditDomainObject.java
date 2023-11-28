@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 
 public class AuditDomainObject extends BusinessObject {
 
-    private LocalDateTime createdOn;
+    protected LocalDateTime createdOn;
 
-    private LocalDateTime updatedOn;
+    protected LocalDateTime updatedOn;
 
-    private String createdBy;
+    protected String createdBy;
 
-    private String updatedBy;
+    protected String updatedBy;
 
     public AuditDomainObject() {
         super();

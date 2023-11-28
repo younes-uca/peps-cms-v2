@@ -1,17 +1,17 @@
-package  ma.peps.sqli.infra.dao.specification.core.common;
+package ma.peps.sqli.infra.dao.specification.core.common;
 
-import ma.peps.sqli.infra.dao.criteria.core.common.ContainerTypeCriteria;
 import ma.peps.sqli.infra.bean.core.common.ContainerTypeEntity;
+import ma.peps.sqli.infra.dao.criteria.core.common.ContainerTypeCriteria;
 import ma.peps.sqli.util.specification.AbstractSpecification;
 
 
-public class ContainerTypeSpecification extends  AbstractSpecification<ContainerTypeCriteria, ContainerTypeEntity>  {
+public class ContainerTypeSpecification extends AbstractSpecification<ContainerTypeCriteria, ContainerTypeEntity> {
 
     @Override
     public void constructPredicates() {
         addPredicateId("id", criteria);
-        addPredicate("libelle", criteria.getLibelle(),criteria.getLibelleLike());
-        addPredicate("code", criteria.getCode(),criteria.getCodeLike());
+        addPredicate("libelle", criteria.getLibelle(), criteria.getLibelleLike());
+        addPredicate("code", criteria.getCode(), criteria.getCodeLike());
     }
 
     public ContainerTypeSpecification(ContainerTypeCriteria criteria) {

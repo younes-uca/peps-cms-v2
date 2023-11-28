@@ -1,7 +1,7 @@
-package  ma.peps.sqli.infra.converter.container;
+package ma.peps.sqli.infra.converter.container;
 
-import ma.peps.sqli.domain.model.container.Container;
-import ma.peps.sqli.domain.model.container.Slot;
+import ma.peps.sqli.app.backoffice.domain.model.container.Container;
+import ma.peps.sqli.app.backoffice.domain.model.container.Slot;
 import ma.peps.sqli.infra.bean.core.container.SlotEntity;
 import ma.peps.sqli.util.converter.AbstractInfraConverter;
 import ma.peps.sqli.util.helper.StringUtil;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 public class SlotInfraConverter extends AbstractInfraConverter<SlotEntity, Slot> {
 
     @Autowired
-    private ContainerInfraConverter containerConverter ;
+    private ContainerInfraConverter containerConverter;
     private boolean container;
 
-    public  SlotInfraConverter(){
+    public SlotInfraConverter() {
         super(SlotEntity.class, Slot.class);
     }
 
@@ -24,21 +24,19 @@ public class SlotInfraConverter extends AbstractInfraConverter<SlotEntity, Slot>
         if (entity == null) {
             return null;
         } else {
-        Slot model = new Slot();
-            if(StringUtil.isNotEmpty(entity.getId()))
+            Slot model = new Slot();
+            if (StringUtil.isNotEmpty(entity.getId()))
                 model.setId(entity.getId());
-            if(StringUtil.isNotEmpty(entity.getType()))
+            if (StringUtil.isNotEmpty(entity.getType()))
                 model.setType(entity.getType());
-            if(entity.getContainer() != null && entity.getContainer().getId() != null){
+            if (entity.getContainer() != null && entity.getContainer().getId() != null) {
                 model.setContainer(new Container());
                 model.getContainer().setId(entity.getContainer().getId());
                 model.getContainer().setId(entity.getContainer().getId());
             }
 
 
-
-
-        return model;
+            return model;
         }
     }
 
@@ -48,16 +46,16 @@ public class SlotInfraConverter extends AbstractInfraConverter<SlotEntity, Slot>
             return null;
         } else {
             SlotEntity entity = new SlotEntity();
-            if(StringUtil.isNotEmpty(model.getId()))
-             entity.setId(model.getId());
-            if(StringUtil.isNotEmpty(model.getType()))
-             entity.setType(model.getType());
-        if(this.container && model.getContainer()!=null) {
-            entity.setContainer(containerConverter.toEntity(model.getContainer())) ;
-        }
+            if (StringUtil.isNotEmpty(model.getId()))
+                entity.setId(model.getId());
+            if (StringUtil.isNotEmpty(model.getType()))
+                entity.setType(model.getType());
+            if (this.container && model.getContainer() != null) {
+                entity.setContainer(containerConverter.toEntity(model.getContainer()));
+            }
 
 
-        return entity;
+            return entity;
         }
     }
 
@@ -67,16 +65,19 @@ public class SlotInfraConverter extends AbstractInfraConverter<SlotEntity, Slot>
     }
 
 
-    public ContainerInfraConverter getContainerConverter(){
+    public ContainerInfraConverter getContainerConverter() {
         return this.containerConverter;
     }
-    public void setContainerInfraConverter(ContainerInfraConverter containerConverter ){
+
+    public void setContainerInfraConverter(ContainerInfraConverter containerConverter) {
         this.containerConverter = containerConverter;
     }
-    public boolean  isContainer(){
+
+    public boolean isContainer() {
         return this.container;
     }
-    public void  setContainer(boolean container){
+
+    public void setContainer(boolean container) {
         this.container = container;
     }
 }

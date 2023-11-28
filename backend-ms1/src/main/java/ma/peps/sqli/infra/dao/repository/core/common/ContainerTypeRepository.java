@@ -1,15 +1,17 @@
 package ma.peps.sqli.infra.dao.repository.core.common;
 
-import org.springframework.data.jpa.repository.Query;
-import ma.peps.sqli.util.repository.AbstractRepository;
 import ma.peps.sqli.infra.bean.core.common.ContainerTypeEntity;
+import ma.peps.sqli.util.repository.AbstractRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 
 @Repository
-public interface ContainerTypeRepository extends AbstractRepository<ContainerTypeEntity,Long>  {
+public interface ContainerTypeRepository extends AbstractRepository<ContainerTypeEntity, Long> {
     ContainerTypeEntity findByCode(String code);
+
     int deleteByCode(String code);
 
 

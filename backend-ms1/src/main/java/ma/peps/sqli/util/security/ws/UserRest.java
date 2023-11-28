@@ -1,20 +1,12 @@
-package  ma.peps.sqli.util.security.ws;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+package ma.peps.sqli.util.security.ws;
 
 import ma.peps.sqli.util.security.bean.User;
 import ma.peps.sqli.util.security.service.facade.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/api/users")
 @RestController
@@ -25,7 +17,7 @@ public class UserRest {
 
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     @GetMapping("/")
-    public List<User> findAll(){
+    public List<User> findAll() {
         return this.userService.findAll();
     }
 

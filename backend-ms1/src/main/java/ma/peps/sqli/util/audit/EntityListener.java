@@ -1,11 +1,10 @@
 package ma.peps.sqli.util.audit;
 
-import ma.peps.sqli.util.security.bean.User;
-
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import ma.peps.sqli.util.security.bean.User;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

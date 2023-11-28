@@ -1,7 +1,7 @@
 package ma.peps.sqli.infra.dao.facade.core.container;
 
-import ma.peps.sqli.domain.dao.container.SlotDao;
-import ma.peps.sqli.domain.model.container.Slot;
+import ma.peps.sqli.app.backoffice.domain.dao.container.SlotDao;
+import ma.peps.sqli.app.backoffice.domain.model.container.Slot;
 import ma.peps.sqli.infra.bean.core.container.SlotEntity;
 import ma.peps.sqli.infra.converter.container.SlotInfraConverter;
 import ma.peps.sqli.infra.dao.repository.core.container.SlotRepository;

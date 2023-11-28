@@ -1,6 +1,6 @@
 package ma.peps.sqli.infra.converter.common;
 
-import ma.peps.sqli.domain.model.common.ContainerType;
+import ma.peps.sqli.app.backoffice.domain.model.common.ContainerType;
 import ma.peps.sqli.infra.bean.core.common.ContainerTypeEntity;
 import ma.peps.sqli.util.converter.AbstractInfraConverter;
 import ma.peps.sqli.util.helper.StringUtil;

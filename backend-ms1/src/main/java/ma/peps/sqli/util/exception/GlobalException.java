@@ -102,7 +102,7 @@ public class GlobalException extends Exception implements Serializable {
                 message = e.getMessage();
                 status = HttpStatus.INTERNAL_SERVER_ERROR;
                 User currentUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-                System.out.println( requestURI + " : " + "user : " + currentUser.getUsername());
+                System.out.println(requestURI + " : " + "user : " + currentUser.getUsername());
                 e.printStackTrace();
             }
         }

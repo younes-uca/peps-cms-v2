@@ -1,14 +1,13 @@
 package ma.peps.sqli.util.security.ws;
 
-import java.util.List;
-
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import ma.peps.sqli.util.security.bean.Role;
 import ma.peps.sqli.util.security.service.facade.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RequestMapping("/api/roles")
 @RestController
@@ -19,7 +18,7 @@ public class RoleRest {
 
     // @PreAuthorize("hasRole(AuthoritiesConstants.super_admin)")
     @GetMapping("/")
-    public List<Role> findAll(){
+    public List<Role> findAll() {
         return this.roleService.findAll();
     }
 }
