@@ -1,7 +1,6 @@
 Feature: Slot
 
   Background:
-    * call read('karate-config.js')
     * call read('db_cleaner.js')
     * url slotUrl
     * header Content-Type = 'application/json'

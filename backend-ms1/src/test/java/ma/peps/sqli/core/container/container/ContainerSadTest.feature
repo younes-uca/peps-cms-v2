@@ -1,7 +1,6 @@
 Feature: Container
 
   Background:
-    * call read('karate-config.js')
     * call read('db_cleaner.js')
     * url containerUrl
     * header Content-Type = 'application/json'
