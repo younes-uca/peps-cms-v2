@@ -6,15 +6,18 @@
     "hasSection": "true",
     "label": "label-1",
     "title": "title-1",
-    "type": {"id": "1"},
+    "type": {"id": "5"},
     "name": "name-1",
     "productCode": "productCode-1",
     "slots": [
         {
+            "type": "type-1"
         },
         {
+            "type": "type-2"
         },
         {
+            "type": "type-3"
         }
     ]
 }

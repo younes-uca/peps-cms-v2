@@ -39,10 +39,6 @@ public class ContainerTypeDaoImpl implements ContainerTypeDao {
         return 1;
     }
 
-    @Override
-    public List<ContainerType> findAlloptimized() {
-        return findAll();
-    }
 
     @Override
     public ContainerType update(ContainerType model) {

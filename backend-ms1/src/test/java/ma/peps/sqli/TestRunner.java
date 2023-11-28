@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestRunner {
 
-    private String path = "core/container/container/";
+    private String path = "core/container/";
 
     @BeforeAll
     public static void beforeAll() {

@@ -20,7 +20,7 @@ Feature: Container
     * path 'id', response.id
     * header Authorization = 'Bearer ' + adminToken
     * method GET
-    * status 400
+    * status 404
     * karate.match("each response contains objectSchema")
 
 

@@ -5,40 +5,14 @@ import ma.peps.sqli.app.backoffice.domain.model.container.Slot;
 import ma.peps.sqli.infra.bean.core.container.SlotEntity;
 import ma.peps.sqli.infra.converter.container.SlotInfraConverter;
 import ma.peps.sqli.infra.dao.repository.core.container.SlotRepository;
+import ma.peps.sqli.util.dao.AbstractDaoImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class SlotDaoImpl implements SlotDao {
-    private SlotRepository repository;
-    private SlotInfraConverter converter;
+public class SlotDaoImpl extends AbstractDaoImpl<SlotEntity, Slot, SlotRepository, SlotInfraConverter> implements SlotDao {
 
-    public Slot save(Slot model) {
-        SlotEntity entity = converter.toEntity(model);
-        repository.save(entity);
-        return converter.toModel(entity);
-    }
-
-    public List<Slot> findAll() {
-        List<SlotEntity> list = repository.findAll();
-        return converter.toModel(list);
-    }
-
-    public Slot findById(Long id) {
-        SlotEntity entity = repository.findById(id).orElse(null);
-        return converter.toModel(entity);
-    }
-
-    public int deleteById(Long id) {
-        repository.deleteById(id);
-        return 1;
-    }
-
-    @Override
-    public List<Slot> findAlloptimized() {
-        return findAll();
-    }
 
     @Override
     public Slot update(Slot model) {
@@ -63,7 +37,6 @@ public class SlotDaoImpl implements SlotDao {
 
 
     public SlotDaoImpl(SlotRepository repository, SlotInfraConverter converter) {
-        this.repository = repository;
-        this.converter = converter;
+        super(repository, converter);
     }
 }

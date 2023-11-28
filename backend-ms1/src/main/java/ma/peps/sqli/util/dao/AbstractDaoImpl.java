@@ -24,6 +24,10 @@ public class AbstractDaoImpl<T extends AuditBusinessObject, D extends AuditDomai
         return converter.toModel(list);
     }
 
+    public List<D> findAllOptimized() {
+        return findAll();
+    }
+
     public D findById(Long id) {
         T entity = repository.findById(id).orElse(null);
         return converter.toModel(entity);

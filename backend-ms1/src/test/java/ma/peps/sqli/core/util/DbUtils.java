@@ -41,10 +41,8 @@ public class DbUtils {
         return jdbc.queryForList(query);
     }
     public void cleanUp() {
-        jdbc.update("DELETE FROM `sqli-cms`.container");
-        jdbc.update("DELETE FROM `sqli-cms`.container_type");
-        jdbc.update("DELETE FROM `sqli-cms`.permission");
         jdbc.update("DELETE FROM `sqli-cms`.slot");
+        jdbc.update("DELETE FROM `sqli-cms`.container");
     }
 
 }
